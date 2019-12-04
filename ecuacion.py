@@ -1,13 +1,17 @@
-import numpy as np 
-import matplotlib.pylab as plt
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 
-datos=np.loadtxt('ecuacion.dat')
+datos = np.loadtxt("ecuacion.dat")
 
-x=datos[:,0]
-y=datos[:,1]
+#para realizar las otras dos graficas me guié de la solucion del ejercicio 29 dada por el profesor.
+plt.subplot(2,3,2)
+numx=200
+numt=50
 
+t=np.linspace(0,1,numt)
+x1=datos[:,numx//4]
+plt.plot(t,x1)
+plt.savefig("ecuacion.png")
 
-plt.plot(x,y)
-plt.savefig('resultado.png')
